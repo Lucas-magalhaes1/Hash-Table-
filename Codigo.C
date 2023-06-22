@@ -122,7 +122,7 @@ unsigned int removerNome(const char* nome) {
         atual = atual->proximo;
     }
 
-    return -1; // Retorna -1 se o nome não for encontrado
+    return -1; 
 }
 
 
@@ -215,11 +215,11 @@ int comparar_nomes(const void* a, const void* b) {
 
 
 void print_all_nomes_sorted() {
-    const int MAX_NAMES = 100788; // Tamanho máximo para o array de nomes
-    char* all_nomes[MAX_NAMES]; // Array para armazenar todos os nomes
+    const int MAX_NAMES = 100788; 
+    char* all_nomes[MAX_NAMES]; 
     int contar = 0;
 
-    // Percorre todas as chaves e adiciona os nomes ao array
+   
     for (int i = 0; i < TABLE_SIZE; i++) {
         Node* atual = tabela_hash[i];
         while (atual != NULL && contar < MAX_NAMES) {
@@ -229,10 +229,9 @@ void print_all_nomes_sorted() {
         }
     }
 
-    // Ordena o array de nomes em ordem alfabética
+    
     qsort(all_nomes, contar, sizeof(char*), comparar_nomes);
 
-    // Imprime os nomes ordenados
     printf("Nomes ordenados:\n");
     printf("----------------\n");
     for (int i = 0; i < contar; i++) {
@@ -240,7 +239,7 @@ void print_all_nomes_sorted() {
         free(all_nomes[i]); // Libera a memória alocada para cada nome
     }
 
-    // Limpa o array de nomes
+  
     memset(all_nomes, 0, sizeof(all_nomes));
 }
 
