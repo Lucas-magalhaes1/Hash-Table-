@@ -236,7 +236,7 @@ void print_all_nomes_sorted() {
     printf("----------------\n");
     for (int i = 0; i < contar; i++) {
         printf("%s\n", all_nomes[i]);
-        free(all_nomes[i]); // Libera a memória alocada para cada nome
+        free(all_nomes[i]); 
     }
 
   
