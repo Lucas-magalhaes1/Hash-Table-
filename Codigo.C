@@ -170,14 +170,14 @@ void sort_tabela_hash() {
     for (int i = 0; i < TABLE_SIZE; i++) {
         Node* head = tabela_hash[i];
 
-        // Encontra a cauda da lista encadeada
+        
         Node* tail = NULL;
         while (head && head->proximo) {
             head = head->proximo;
         }
         tail = head;
 
-        // Ordena os elementos da chave usando Quicksort
+        
         quicksort(tabela_hash[i], tail);
     }
 }
@@ -205,7 +205,7 @@ void limpar_tabela_hash() {
 }
 
 
-// Função de comparação para o qsort()
+
 int comparar_nomes(const void* a, const void* b) {
     const char* nome1 = *(const char**)a;
     const char* nome2 = *(const char**)b;
